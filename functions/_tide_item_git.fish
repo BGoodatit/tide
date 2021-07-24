@@ -61,7 +61,7 @@ function _tide_item_git
     printf '%s' \
         '❨git❩  '(set_color $tide_git_branch_color) $location \
         (set_color $tide_git_operation_color) ' '$operation ' '$step/$totalSteps \
-        (set_color $tide_git_upstream_color) ' ⇣'$upstreamBehind ' ⇡'$upstreamAhead \
+        (set_color $tide_git_upstream_color) ' ⇣'$upstreamBehind' behind remote' ' ⇡'$upstreamAhead' ahead of remote' \
         (set_color $tide_git_stash_color) ' *'$stash \
         (set_color $tide_git_conflicted_color) ' ~'$conflicted \
         (set_color $tide_git_staged_color) ' +'$staged \
