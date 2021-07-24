@@ -54,7 +54,7 @@ function _tide_item_git
     set -l stash (git $gitSetDirOption stash list 2>/dev/null | count) || set -e stash
     set -l conflicted (string match --regex '^UU' $gitInfo | count) || set -e conflicted
     set -l staged (string match --regex '^[ADMR].' $gitInfo | count) || set -e staged
-    set -l dirty (string match --regex '^.[ADMR]' $gitInfo | count) || set -e dirty
+    set -l dirty (string match --regex '^.[AMR]' $gitInfo | count) || set -e dirty
     set -l deleted (string match --regex '^.D' $gitInfo | count) || set -e deleted
     set -l untracked (string match --regex '^\?\?' $gitInfo | count) || set -e untracked
 
