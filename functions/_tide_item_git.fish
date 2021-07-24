@@ -64,7 +64,7 @@ function _tide_item_git
         (set_color $tide_git_upstream_color) ' ⇣'$upstreamBehind' behind remote' ' ⇡'$upstreamAhead' ahead of remote' \
         (set_color $tide_git_stash_color) ' *'$stash \
         (set_color $tide_git_conflicted_color) ' ~'$conflicted \
-        (set_color $tide_git_staged_color) ' +'$staged \
-        (set_color $tide_git_dirty_color) ' !'$dirty \
-        (set_color $tide_git_untracked_color) ' ?'$untracked
+        (set_color $tide_git_staged_color) ' +'$staged' staged' \
+        (set_color $tide_git_dirty_color) ' !'$dirty' dirty' \
+        (set_color $tide_git_untracked_color) ' ?'$untracked' untracked'
 end
