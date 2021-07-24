@@ -55,16 +55,18 @@ function _tide_item_git
     set -l conflicted (string match --regex '^UU' $gitInfo | count) || set -e conflicted
     set -l staged (string match --regex '^[ADMR].' $gitInfo | count) || set -e staged
     set -l dirty (string match --regex '^.[ADMR]' $gitInfo | count) || set -e dirty
+    set -l deleted (string match --regex '^.D' $gitInfo | count) || set -e deleted
     set -l untracked (string match --regex '^\?\?' $gitInfo | count) || set -e untracked
 
     # Print the information
     printf '%s' \
         '❨git❩  '(set_color $tide_git_branch_color) $location \
         (set_color $tide_git_operation_color) ' '$operation ' '$step/$totalSteps \
-        (set_color $tide_git_upstream_color) ' ⇣'$upstreamBehind' behind remote' ' ⇡'$upstreamAhead' ahead of remote' \
-        (set_color $tide_git_stash_color) ' *'$stash \
-        (set_color $tide_git_conflicted_color) ' ~'$conflicted \
-        (set_color $tide_git_staged_color) ' +'$staged' staged' \
-        (set_color $tide_git_dirty_color) ' !'$dirty' dirty' \
-        (set_color $tide_git_untracked_color) ' ?'$untracked' untracked'
+        (set_color $tide_git_upstream_color) ' '$upstreamBehind' commit(s) behind remote' ' '$upstreamAhead' commit(s) ahead of remote' \
+        (set_color $tide_git_stash_color) ' '$stash' stashed' \
+        (set_color $tide_git_conflicted_color) ' '$conflicted' conflicted' \
+        (set_color $tide_git_staged_color) ' '$staged' staged' \
+        (set_color $tide_git_dirty_color) ' '$dirty' dirty' \
+        (set_color $tide_git_dirty_color) ' '$deleted' deleted' \
+        (set_color $tide_git_untracked_color) ' '$untracked' untracked'
 end
