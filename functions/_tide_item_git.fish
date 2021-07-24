@@ -59,7 +59,7 @@ function _tide_item_git
 
     # Print the information
     printf '%s' \
-        (set_color $tide_git_branch_color) $location \
+        '❨git❩  '(set_color $tide_git_branch_color) $location \
         (set_color $tide_git_operation_color) ' '$operation ' '$step/$totalSteps \
         (set_color $tide_git_upstream_color) ' ⇣'$upstreamBehind ' ⇡'$upstreamAhead \
         (set_color $tide_git_stash_color) ' *'$stash \
