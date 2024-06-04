@@ -1,3 +1,35 @@
+## Install Custom Tide Version
+
+```fish
+#!/usr/bin/env fish
+
+# Check for necessary commands
+if not type -q curl; or not type -q tar
+    echo "This script requires 'curl' and 'tar' to be installed."
+    exit 1
+end
+
+# Temporary directory for the installation files
+set tide_tmp_dir (mktemp -d)
+
+# Downloading Tide
+curl -L https://codeload.github.com/BGoodatit/tide/tar.gz/askthecode-gpt | tar -xzC $tide_tmp_dir
+
+# Installing Tide
+cp -R $tide_tmp_dir/tide-askthecode-gpt/{completions,conf.d,functions} $__fish_config_dir
+
+# Initialize the tide configuration
+source $__fish_config_dir/conf.d/_tide_init.fish
+exec fish --init-command "set -g fish_greeting; emit _tide_init_install"
+
+# Cleanup
+echo "Installation completed. Please restart your Fish shell."
+rm -r $tide_tmp_dir
+```
+
+---
+
+
 <div align="center"><img src="../assets/images/logo.svg" width="61.8%"/><br>[![ci_badge][]][actions] ​ [![license_badge][]][license] ​ [![blazing_badge][]][blazing_tweet] <!-- 0 width spaces on this line --></div>
 
 #
