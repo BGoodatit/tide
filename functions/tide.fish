@@ -26,3 +26,4 @@ function _tide_help
         '  bug-report  print info for use in bug reports'
 end
 
+
