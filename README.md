@@ -13,10 +13,10 @@ end
 set tide_tmp_dir (mktemp -d)
 
 # Downloading Tide
-curl -L https://codeload.github.com/BGoodatit/tide/tar.gz/askthecode-gpt | tar -xzC $tide_tmp_dir
+curl -L https://codeload.github.com/BGoodatit/tide/tar.gz/main | tar -xzC $tide_tmp_dir
 
 # Installing Tide
-cp -R $tide_tmp_dir/tide-askthecode-gpt/{completions,conf.d,functions} $__fish_config_dir
+cp -R $tide_tmp_dir/tide-main/{completions,conf.d,functions} $__fish_config_dir
 
 # Initialize the tide configuration
 source $__fish_config_dir/conf.d/_tide_init.fish
