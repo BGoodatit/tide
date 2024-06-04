@@ -53,3 +53,4 @@ tide_vi_mode_visual_bg_color black
 tide_vi_mode_visual_color blue
 tide_virtual_env_bg_color black
 tide_virtual_env_color cyan
+
