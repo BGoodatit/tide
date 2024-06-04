@@ -98,3 +98,4 @@ tide_virtual_env_bg_color 444444
 tide_virtual_env_color 00AFAF
 tide_virtual_env_display_mode projectName
 tide_virtual_env_icon ''
+
